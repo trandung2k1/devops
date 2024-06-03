@@ -4,7 +4,7 @@
 docker build -t trandung2001/welcome-to-docker:v1 .
 ```
 
-### Run image mode: -it, -d; -rm: auto remove conatiner; --name: name_container; -p: port_app_local:port_container
+### Run image mode: -it, -d; -rm: auto remove container; --name: name_container; -p: port_app_local:port_container
 
 ```js
 docker run -it --rm --name welcome-to-docker -p 8080:3000 trandung2001/welcome-to-docker:v1
