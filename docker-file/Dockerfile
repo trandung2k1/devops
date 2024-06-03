@@ -1,19 +1,23 @@
 # Base image
-FROM node:18
+FROM node:alpine
 
 # Working directory
 WORKDIR /app
 
+RUN chown node:node /app
+
 # Layer
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 
 # COPY . .
 
 # COPY package.json
 
-RUN npm install
+USER node
+
+RUN npm install --production
 
 # Copy all but folders and files inside dockerignore file
-COPY . .
+COPY --chown=node:node . .
 
 CMD [ "npm", "start" ]
