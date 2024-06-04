@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-file
+spec:
+  selector:
+    matchLabels:
+      app: docker-file
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: docker-file
+    spec:
+      containers:
+        - name: docker-file
+          image: trandung2001/docker-file
+          ports:
+            - containerPort: 3000
